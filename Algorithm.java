@@ -31,7 +31,7 @@ public class Algorithm {
             Individual newIndiv;
             if (Math.random() <= crossRate) {
                 newIndiv = crossover(indiv1, indiv2);
-            } else if (indiv1.getFitness() <= indiv2.getFitness()) {
+            } else if (indiv1.getFitness() >= indiv2.getFitness()) {
                 newIndiv = indiv1;
             } else {
                 newIndiv = indiv2;
@@ -65,7 +65,7 @@ public class Algorithm {
     private static void mutate(Individual indiv) {
         for (int i = 0; i < indiv.size(); i++) {
             if (Math.random() <= mutationRate) {
-                byte gene = (byte) ((Math.random()*100) % 3);
+                byte gene = (byte) ((Math.random()*100) % indiv.defaultGeneVariety);
                 indiv.setGene(i, gene);
             }
         }

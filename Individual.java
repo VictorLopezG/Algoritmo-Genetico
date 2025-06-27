@@ -6,7 +6,7 @@ public class Individual {
     static int defaultGeneVariety=3;
     private byte[] genes = new byte[defaultGeneLength];
     // fitness maximal
-    private int fitness = Integer.MAX_VALUE;
+    private int fitness = Integer.MIN_VALUE;
 
     public Individual() {
     }
@@ -15,7 +15,7 @@ public class Individual {
         defaultGeneLength = length;
         genes = new byte[defaultGeneLength];
         defaultGeneVariety=colors;
-        fitness = Integer.MAX_VALUE;
+        fitness = Integer.MIN_VALUE;
     }
 
     // Individuo al azar... valor de bits se eligen azarosamente
@@ -33,7 +33,7 @@ public class Individual {
 
     public void setGene(int index, byte value) {
         genes[index] = value;
-        fitness = Integer.MAX_VALUE;
+        fitness = Integer.MIN_VALUE;
     }
 
     /* Metodos publicos */
@@ -42,8 +42,9 @@ public class Individual {
     }
 
     public int getFitness() {
-        if (fitness == Integer.MAX_VALUE) {
+        if (fitness == Integer.MIN_VALUE) {
             fitness = FitnessCalc.getFitness(this);
+            //System.out.println(fitness);
         }
         return fitness;
     }

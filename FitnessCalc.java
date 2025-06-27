@@ -19,6 +19,7 @@ public class FitnessCalc {
                 if (datos[i][j]==1&&i!=j){
                    if(individual.getGene(i)==individual.getGene(j)){
                        fitness--;
+                       //System.out.print("-");
                    } 
                 }
             }
@@ -31,6 +32,6 @@ public class FitnessCalc {
         /*if (cero) {
             return Integer.MAX_VALUE;//Obviamente, en este caso, no se permite 0000000000000 como opción, así que se le da un peso artificial
         }*/
-        return Math.abs(fitness);
+        return fitness;
     }
 }
