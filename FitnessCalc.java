@@ -23,15 +23,7 @@ public class FitnessCalc {
                    } 
                 }
             }
-            
-            /*fitness = fitness + individual.getGene(i) * datos[i];
-            if (individual.getGene(i) == 1) {
-                cero = false;
-            }*/
         }
-        /*if (cero) {
-            return Integer.MAX_VALUE;//Obviamente, en este caso, no se permite 0000000000000 como opción, así que se le da un peso artificial
-        }*/
         return fitness;
     }
 }
